@@ -1,10 +1,14 @@
 <template>
-  <div>Labels</div>
+  <div>Labels
+     <Nav/>
+  </div>
 </template>
 
 <script lang="ts">
-export default {};
+export default {
+  name:'Labels'
+};
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 </style>

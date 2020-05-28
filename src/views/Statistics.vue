@@ -1,11 +1,16 @@
 <template>
-  <div>statistics</div>
+  <div>statistics
+     <Nav/>
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 
-export default Vue.extend({});
+export default {
+  name:'Statistics',
+}
+
 </script>
 
 <style lang="scss" scoped>
