@@ -14,7 +14,6 @@
       统计
       </router-link>
     
-
     </nav>
 </template>
 <script lang="ts">
@@ -26,10 +25,11 @@
 </script>
 
 <style lang="scss" scoped>
-   nav{
-    border: 1px solid red;
+  @import "~@/assets/style/helper.scss";
+  
+  nav{
+   @extend %outerShadow;
     display: flex;
-    box-shadow: 0 0 3px rgba(0,0,0,0.25);
     flex-direction: row;
     font-size: 12px;
     > .item{
@@ -45,7 +45,7 @@
         }
     }
     > .item.selected{
-        color: red;
+        color:$color-highlight;
     }
 
 }
