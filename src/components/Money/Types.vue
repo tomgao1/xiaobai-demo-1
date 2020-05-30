@@ -1,35 +1,48 @@
-import Types from '@/components/Money/Types.vue';
+
 <template>
     <div>
      <ul class="types">
-      <li :class="type ==='-' && 'selected'" @clcik="selectType('-')">支出</li>
+      <li :class="type ==='-' && 'selected'" @click="selectType('-')">支出</li>
       <li :class="type ==='+' && 'selected'" @click="selectType('+')">收入</li> 
 
     </ul>
 </div>
 </template>
 
-<script >
-   export default{
-   name:'Types',
-   props:['xxx'],
-   data(){
-       return{
-           type: '-' //'-'表示支出，'+'表示收入
-       }
-   },
-         mounted(){
-             console.log(this.xxx)
-         },
-         methods:{
-             selectType(type){//type只能是'-'和'+'其中一个
+<script lang="ts">
+  import Vue from 'vue';
+import { Component,Prop } from 'vue-property-decorator';
+
+//1自动提示更智能
+//2你不能随便写.tostring()
+//3严谨，编译错误不能转化js!
+  @Component 
+   export default class Types extends Vue{
+       type = '-';
+       @Prop(Number) xxx: number |undefined;
+       //Prop告诉Vue.xxx不是data是prop
+       //Number告诉Vue.xxx运行时是个Number
+       //xxx属性名
+       //number|undefined就是xxx的编译时类型
+
+
+     selectType(type: string){//type只能是'-'和'+'其中一个
         if (type !== '-' && type !== '+') {
           throw new Error('type is unknown')
         }
         this.type = type
       }
-             }
-         }
+
+      mounted(){
+          if(this.xxx===undefined){
+              console.log('没有xxx')
+          }else{
+              console.log(this.xxx.toString())
+          }
+      }
+   }
+ 
+ 
    
 </script>
 
