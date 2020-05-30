@@ -52,10 +52,17 @@
         clear(){
           this.output = '0';
         }
-      
+       
     }
 
 </script>
+
+
+
+
+
+
+
 
 <style lang="scss" scoped>
 @import "~@/assets/style/helper.scss";
