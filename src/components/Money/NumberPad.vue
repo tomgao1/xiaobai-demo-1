@@ -32,7 +32,6 @@ export default {
 @import "~@/assets/style/helper.scss";
 .numberPad{
     .output {
-        border: 1px solid red;
         @extend %clearFix;
         @extend %innerShadow;
         font-size: 36px;
