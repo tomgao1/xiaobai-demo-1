@@ -1,7 +1,6 @@
 <template>
 
   <Layout class-prefix="layout">
-    {[record]}
     <NumberPad :value.sync="record.amount" @submit="saveRecord"/>
     <Types :value.sync="record.type"/>
     <div class="notes">
@@ -65,7 +64,7 @@
     display: flex;
     flex-direction: column-reverse;
   }
-  .notes{
+  .notes {
     padding: 12px 0;
   }
 
