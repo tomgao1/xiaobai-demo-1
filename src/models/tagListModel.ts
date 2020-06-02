@@ -1,20 +1,8 @@
 import createId from '@/lib/createId';
 
 const localStorageKeyName = 'tagList';
-type Tag = {
-    id: string;
-    name: string;
-}
-type TagsListModel = {
-    data: Tag[];
-    fetch: () => Tag[];
-    create: (name: string) => 'success' | 'duplicated'; //联合类型
-    update: (id: string, name: string) => 'success'|'not found' | 'duplicated';
-    remove: (id: string) => boolean;
-    save: () => void;
-}
 
-const tagListModel: TagsListModel ={
+const tagListModel: TagListModel ={
  data: [],
   fetch(){
    this.data = JSON.parse(window.localStorage.getItem('recordList') || '[]');
@@ -47,7 +35,7 @@ const tagListModel: TagsListModel ={
     },
     remove(id: string) {
         let index = -1;
-        for (let i=0; i< this.data.length; i++){
+        for (let i=0; i < this.data.length; i++){
             if(this.data[i].id === id) {
                 index = i;
                 break;
