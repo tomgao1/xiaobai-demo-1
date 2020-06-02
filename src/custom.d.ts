@@ -3,7 +3,7 @@ type RecordItem = {
     notes: string;
     type: string;
     amount: number;//数据类型object |string
-    createAt?: Date; //类/购值函数
+   createdAt?: Date; //类/购值函数
   };
   type Tag = {
     id: string;
