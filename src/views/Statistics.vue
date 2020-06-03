@@ -16,10 +16,11 @@
   import Vue from 'vue';
   import { Component } from 'vue-property-decorator';
   import Tabs from '@/components/Tabs.vue';
+  
 
 
   @Component({
-    components:{Tabs,Types},
+    components:{Tabs},
   })
   export default class Statistics extends Vue {
     type = '-';
