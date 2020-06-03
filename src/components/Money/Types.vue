@@ -2,16 +2,18 @@
 <template>
     <div>
      <ul class="types">
-      <li :class="value ==='-' && 'selected'" @click="selectType('-')">支出</li>
-      <li :class="value ==='+' && 'selected'" @click="selectType('+')">收入</li> 
-
+      <li :class="{[classPrefix+'-item']: classPrefix, selected: value==='-'}" 
+           @click="selectType('-')">支出</li>
+      <li :class="{[classPrefix+'-item']: classPrefix, selected: value==='+'}"
+          @click="selectType('+')">收入
+      </li>
     </ul>
 </div>
 </template>
 
 <script lang="ts">
   import Vue from 'vue';
-import { Component,Prop,Watch } from 'vue-property-decorator';
+  import { Component,Prop,Watch } from 'vue-property-decorator';
 
 //1自动提示更智能
 //2你不能随便写.tostring()
@@ -19,11 +21,8 @@ import { Component,Prop,Watch } from 'vue-property-decorator';
   @Component 
    export default class Types extends Vue{
       
-       @Prop() readonly value!: string;
-       //Prop告诉Vue.xxx不是data是prop
-       //Number告诉Vue.xxx运行时是个Number
-       //xxx属性名
-       //number|undefined就是xxx的编译时类型
+       @Prop(String) readonly value!: string;
+      @Prop(String) classPrefix?: string;
 
 
      selectType(type: string){//type只能是'-'和'+'其中一个
@@ -42,7 +41,7 @@ import { Component,Prop,Watch } from 'vue-property-decorator';
 
 <style lang="scss" scoped>
      .types {
-         background: #c4c4c4;
+         background: #C4C4C4;
          display: flex;
          text-align: center;
          font-size: 24px;
