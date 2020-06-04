@@ -13,7 +13,7 @@ import clone from '@/lib/clone';
       },
       createRecord(record: RecordItem) {
         const record2: RecordItem = clone(record);
-        record2.createdAt = new Date();
+        record2.createdAt = new Date().toString();
         this.recordList && this.recordList.push(record2);
         recordStore.saveRecords();
       },
