@@ -1,16 +1,16 @@
 <template>
   <Layout class-prefix="layout">
     <NumberPad :value.sync="record.amount" @submit="saveRecord"/>
-    <Types :value.sync="record.type"/>
+    <Tabs :data-source="recordTypeList"
+          :value.sync="record.type"/>
     <div class="notes">
       <FormItem field-name="备注"
-                 placeholder="在这里输入备注"
-                 @update:value="onUpdateNotes"/>
+                placeholder="在这里输入备注"
+                @update:value="onUpdateNotes"
+      />
     </div>
     <Tags/>
-
- </Layout>
-  
+  </Layout>
 </template>
 
 <script lang="ts">
@@ -24,14 +24,15 @@
 
   
        @Component ({
-           components: {Tags, FormItem, NumberPad},
+           components: {Tabs,Tags, FormItem, NumberPad},
     
        })
 
       export default class Money extends Vue{
         get recordList() {
-      return this.$store.state.recordList;
+          return this.$store.state.recordList;
     }
+     recordTypeList = recordTypeList;
         record: RecordItem = {
           tags:[],notes:'',type:'-',amount:0
         };
@@ -39,11 +40,11 @@
             this.$store.commit('fetchRecords');
     }
 
-          onUpdateNotes(value: string){
+         onUpdateNotes(value: string){
             this.record.notes = value;
           }
-          saveRecord(){
-        this.$store.commit('cerateRecord',this.record);
+          saveRecord() {
+        this.$store.commit('createRecord',this.record);
           }
 
       }
