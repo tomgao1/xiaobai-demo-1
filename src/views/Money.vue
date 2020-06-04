@@ -1,5 +1,4 @@
 <template>
-
   <Layout class-prefix="layout">
     <NumberPad :value.sync="record.amount" @submit="saveRecord"/>
     <Types :value.sync="record.type"/>
@@ -20,7 +19,8 @@
   import FormItem from '@/components/Money/FormItem.vue';
   import Tags from '@/components/Money/Tags.vue';
   import {Component} from 'vue-property-decorator';
-  
+   import recordTypeList from '@/constants/recordTypeList';
+   import Tabs from '@/components/Tabs.vue';
 
   
        @Component ({
