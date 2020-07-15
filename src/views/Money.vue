@@ -20,8 +20,8 @@
   import FormItem from '@/components/Money/FormItem.vue';
   import Tags from '@/components/Money/Tags.vue';
   import {Component} from 'vue-property-decorator';
-   import recordTypeList from '@/constants/recordTypeList';
-   import Tabs from '@/components/Tabs.vue';
+  import recordTypeList from '@/constants/recordTypeList';
+  import Tabs from '@/components/Tabs.vue';
 
   
        @Component ({
