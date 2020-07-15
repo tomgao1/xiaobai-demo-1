@@ -60,5 +60,5 @@ const tagStore = {
 
 tagStore.fetchTags();
   
-
+console.log('可删除')
 export default tagStore

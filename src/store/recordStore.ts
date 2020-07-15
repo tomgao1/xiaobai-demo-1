@@ -20,5 +20,5 @@ import clone from '@/lib/clone';
     };
     
     recordStore.fetchRecords();
-    
+    console.log('可删除')
     export default recordStore; 
