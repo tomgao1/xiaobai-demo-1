@@ -96,27 +96,27 @@
             &.zero{
                 width: 25*2%;
             }
-            $bg:#F2F2F2;
+            $bg:#FEFEFE;
             &:nth-child(1){
                 background: $bg;
             }
             &:nth-child(2),&:nth-child(5) {
-                background: darken($bg,4%);
+                background: $bg;border: 1px solid #F1F1F1;
             }
             &:nth-child(3), &:nth-child(6), &:nth-child(9) {
-          background: darken($bg, 4*2%);
+          background: $bg;border: 1px solid #F1F1F1;
         }
          &:nth-child(4), &:nth-child(7), &:nth-child(10) {
-          background: darken($bg, 4*3%);
+          background:$bg;border: 1px solid #F1F1F1;
         }
         &:nth-child(8), &:nth-child(11), &:nth-child(13) {
-          background: darken($bg, 4*4%);
+          background: $bg;border: 1px solid #F1F1F1;
         }
         &:nth-child(14) {
-          background: darken($bg, 4*5%);
+          background: $bg;border: 1px solid #F1F1F1;
         }
         &:nth-child(12) {
-          background: darken($bg, 4*6%);
+          background: #30CA78;
         }
         }
     }
